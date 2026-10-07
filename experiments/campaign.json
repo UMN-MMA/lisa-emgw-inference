@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "status": "design_only_not_ready_for_inference",
+  "title": "Joint EM-GW inference in crowded LISA frequency bands",
+  "base_seed": 20261006,
+  "arms": {
+    "T": "target_only_gw_misspecified_control",
+    "G": "target_and_neighbour_gw",
+    "F": "joint_oracle_fixed_em_nuisance",
+    "J": "joint_marginalized_em_nuisance"
+  },
+  "shared": {
+    "gw_duration_seconds": 126232599.05418241,
+    "gw_channels": ["A", "E"],
+    "frequency_hz": 0.0026,
+    "known_neighbour_count": 1,
+    "psd_convention": "one_sided_positive_frequency_complex_variance_S_over_2df",
+    "psd_model": null,
+    "target_sky_longitude_rad": 1.76872,
+    "target_sky_latitude_rad": 0.101404006,
+    "target_sky_fixed_in_all_arms": true,
+    "illustrative_injection_masses_msun": [0.55, 0.25],
+    "illustrative_injection_radii_rsun": [0.013, 0.025],
+    "surface_brightness_ratio": 0.6,
+    "linear_limb_darkening": [0.3, 0.4],
+    "spherical_stars": true,
+    "beaming_heating_light_travel_time": false,
+    "mass_radius_relation_in_recovery": false,
+    "em_visit_start_days": [0, 1, 7, 14, 30, 60],
+    "em_visit_duration_hours": 2,
+    "em_exposure_seconds": 10,
+    "em_cadence_seconds": 15,
+    "em_sigma_definition": "constant_fraction_of_out_of_eclipse_normalized_flux",
+    "source_geometry_fixed_across_noise_realizations": true,
+    "phase_adapter_status": "must_implement_and_verify",
+    "numerical_recovery_prior_bounds": null
+  },
+  "stages": {
+    "pilot": {
+      "separation_bins": [0.5, 2, 10],
+      "neighbour_snr_ratio": [0.5, 2],
+      "eclipse_impact": [0.2, 0.8],
+      "target_snr": [30],
+      "em_sigma": [0.001],
+      "noise_realizations": 3
+    },
+    "main": {
+      "separation_bins": [0.5, 1, 3, 10],
+      "neighbour_snr_ratio": [0.5, 1, 2],
+      "eclipse_impact": [0.2, 0.8],
+      "target_snr": [15, 30],
+      "em_sigma": [0.001, 0.003],
+      "noise_realizations": 20
+    }
+  },
+  "coverage_followup": {
+    "selection": "six_configurations_chosen_by_predeclared_overlap_strata_and_eclipse_geometry",
+    "configuration_ids": null,
+    "freeze_truth_and_sign_within_configuration": true,
+    "noise_realizations_per_configuration": 200,
+    "arms": ["G", "J"],
+    "fits_before_independent_repeats": 2400
+  },
+  "production_gates": [
+    "native_GBGPU_and_ellc_execution",
+    "freeze_PSD_time_grid_and_recovery_priors",
+    "verify_joint_phase_and_exposure_adapter",
+    "noise_normalization_and_analytic_linear_posterior_tests",
+    "isolated_source_and_cached_multisource_tests",
+    "pilot_convergence_and_cost_review",
+    "literature_novelty_comparison"
+  ]
+}

@@ -1,0 +1,176 @@
+{
+  "status": "draft_config_not_native_validated",
+  "configuration_id": "pilot-000",
+  "realization": 0,
+  "grid": {
+    "first_bin": 327692,
+    "count": 1024,
+    "duration": 126232599.05418241
+  },
+  "frequency_reference": 0.0026,
+  "psd_file": null,
+  "phase_convention": {
+    "offset_radians": null,
+    "sign": null,
+    "validation_reference": ""
+  },
+  "cadence_seconds": 15.0,
+  "exposure_order": 12,
+  "injection": {
+    "binaries": [
+      {
+        "amplitude": 1e-22,
+        "frequency": 0.0026,
+        "fdot": 2.852934119801782e-17,
+        "orbital_phase": 0.17,
+        "cosi": 0.04528807583227889,
+        "polarization": 0.8,
+        "longitude": 1.76872,
+        "sin_latitude": 0.10123030960849856
+      },
+      {
+        "amplitude": 1e-22,
+        "frequency": 0.002600003960941973,
+        "fdot": 2.852934119801782e-17,
+        "orbital_phase": 0.08896689356179066,
+        "cosi": 0.11328352597978619,
+        "polarization": 1.6955734417211807,
+        "longitude": 0.7345425141184432,
+        "sin_latitude": 0.4794817422995785
+      }
+    ],
+    "individual_snrs": [
+      30.0,
+      15.0
+    ],
+    "geometry": {
+      "radius_1": 0.0774664455025823,
+      "radius_2": 0.14897393365881212,
+      "surface_brightness_ratio": 0.6,
+      "limb_1": 0.3,
+      "limb_2": 0.4,
+      "flux_scale": 1.0,
+      "jitter": 0.0
+    }
+  },
+  "observing_schedule": {
+    "visit_days": [
+      0,
+      1,
+      7,
+      14,
+      30,
+      60
+    ],
+    "hours": 2.0,
+    "cadence": 15.0,
+    "exposure": 10.0
+  },
+  "em_sigma": 0.001,
+  "gw_seed": 3488862741,
+  "em_seed": 1048628167,
+  "initialization_seeds": {
+    "T": 2322499570,
+    "G": 1095042762,
+    "F": 2906106849,
+    "J": 4126337652
+  },
+  "initial_files": {
+    "T": null,
+    "G": null,
+    "F": null,
+    "J": null
+  },
+  "prior_bounds": [
+    [
+      -60,
+      -40
+    ],
+    [
+      -20,
+      20
+    ],
+    [
+      -100,
+      100
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      -1,
+      1
+    ],
+    [
+      0,
+      3.141592653589793
+    ],
+    [
+      -60,
+      -40
+    ],
+    [
+      -20,
+      20
+    ],
+    [
+      -100,
+      100
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      -1,
+      1
+    ],
+    [
+      0,
+      3.141592653589793
+    ],
+    [
+      0,
+      6.283185307179586
+    ],
+    [
+      -1,
+      1
+    ],
+    [
+      0.005,
+      0.25
+    ],
+    [
+      0.005,
+      0.25
+    ],
+    [
+      -2.995732273553991,
+      1.6094379124341003
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      -0.05129329438755058,
+      0.04879016416943205
+    ],
+    [
+      -16,
+      -4
+    ]
+  ],
+  "prior_status": "draft_bounds_require_sensitivity_review",
+  "sampling": {
+    "steps": 1000,
+    "burn": 500
+  },
+  "diagnostic_waveform_draws": 0
+}
